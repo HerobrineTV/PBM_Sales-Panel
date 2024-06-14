@@ -1,0 +1,295 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+button{
+    background: #4d4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-style: double;
+    margin: 1px;
+	border-width: 2px;
+	cursor: pointer;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.select-container {
+  margin-top: 10px;
+}
+
+.select-container label {
+  font-weight: bold;
+}
+
+.select-container select {
+  width: 100%;
+  padding: 10px;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.select-container option {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container button {
+  width: 100%;
+  max-width: 200px;
+  background-color: #999;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-container button:hover {
+  background-color: #777;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden .details-window {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+/* Add CSS styles for the night theme */
+.night-theme {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.night-theme .container {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.night-theme .select-container select,
+.night-theme .hidden select,
+.night-theme .hidden input {
+  background-color: #343434;
+  color: #f0f0f0;
+}
+
+.night-theme .select-container option {
+  background-color: #2c2c2c;
+}
+
+.night-theme .button-container button,
+.night-theme .hidden button {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.night-theme .hidden .details-window {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.grid-parent {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+.grid-older-parent {
+  display: grid;
+  grid-template-columns: 0.5fr 10fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+.grid-output { grid-area: 1 / 1 / 2 / 2; }
+.grid-info { grid-area: 1 / 2 / 2 / 3; }
+
+/* Additional styles to fix alignment issues */
+
+/* Adjust the width of the function dropdown to match the timeRange dropdown */
+.select-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#inputFields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+#inputFields label,
+#inputFields input,
+#inputFields select {
+  width: 100%;
+  padding: 10px;
+  background-color: #999999; /* Set background color of input fields to white */
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* Style the timeRange dropdown similar to function dropdown */
+#timeRange {
+  width: 100%;
+  padding: 10px;
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* Style for buttons */
+.button-container button,
+.night-theme .hidden button {
+  background-color: #ccc;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-container button:hover {
+  background-color: #aaa;
+}
+
+/* Style for dropdowns */
+.select-container select,
+.night-theme .hidden select,
+.night-theme .hidden input,
+#inputFields input,
+#inputFields select {
+  width: 100%;
+  padding: 10px;
+  background-color: #b1a9a9; /* Set background color of input fields to white */
+  color: #2c2c2c;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: #b1a9a9 !important;
+    color: fieldtext !important;
+}
+
+.select-container option,
+#inputFields label {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  grid-gap: 20px;
+  position: relative;
+}
+
+/* Add CSS styles for the left, center, and right side text */
+.left-side-text, .right-side-text {
+  color: #f0f0f0;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  word-break: break-word;
+}
+
+.left-side-text {
+    left: 1%;
+    right: 80%;
+	text-align: left;
+    top: 150px;
+    transform: translateY(-50%);
+    align-self: flex-start;
+    grid-column: 1;
+}
+
+.right-side-text {
+  right: 1%;
+  left: 1%;
+  text-align: left;
+  top: 50px;
+  transform: translateY(-50%);
+  align-self: flex-start;
+  grid-column: 3;
+}
+
+.container {
+  grid-column: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Change to a single column layout for smaller screens */
+  }
+  .left-side-text, .right-side-text {
+    grid-column: auto; /* Reset the grid column for left and right side text */
+  }
+}
+
+.scrollable-container {
+  overflow: auto; /* Add this to make the container scrollable */
+  max-height: 300px; /* Set a max height for the container to enable scrolling */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container button {
+  width: 100%;
+  max-width: 200px;
+  background-color: #999;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-container button:hover {
+  background-color: #777;
+}

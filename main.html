@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="night-theme">
+<head>
+  <link rel="stylesheet" href="https://buyme.bobac-analytics.com/styles.css?v=44">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pls Buy Me Sales Panel</title>
+</head>
+<body>
+  <header>
+	<meta property="og:title" content="Pls Buy Me Sales">
+    <meta property="og:description" content="A small Project I am running with friends, to help out purchasing Cards.">
+    <meta property="og:image" content="https://tr.rbxcdn.com/4ccf8f895179b258853d452eb3e28a2f/150/150/Image/Png">
+    <meta property="og:url" content="https://buyme.bobac-analytics.com/">
+  </header>
+  <div class="grid-container">
+		<div class="left-side-text">
+			<br>
+			<br>
+			<br>
+			<h2 style="margin-block-end: 0em; margin-block-start: 6em;">Tipps Pricing / Valuation</h2>
+			<h6 style="margin-block-start: 0em;">by bluethiccfish</h6>
+			<br>
+			<h3 style="margin-block-end: 0em;">1. Fame</h3>
+			<h5 style="margin-block-start: 0em; margin-block-end: 1em; margin-left: 4%;">Depending on your Fame you can set Prices.</h5>
+			<p style="
+				font-size: 14px;
+				display: list-item;
+				margin-left: 5%;
+				margin-block-end: 0em;
+				margin-block-start: 0em;
+			">0 to 100 Fame ~ 10 <span style="color:LimeGreen;">Robux</span>
+			</p>
+			
+			<p style="
+				font-size: 14px;
+				display: list-item;
+				margin-left: 5%;
+				margin-block-end: 0em;
+				margin-block-start: 0em;
+			">
+			100 to 1K Fame ~ 25 <span style="color:LimeGreen;">Robux</span>
+			</p>
+			
+			<p style="
+				font-size: 14px;
+				display: list-item;
+				margin-left: 5%;
+				margin-block-end: 0em;
+				margin-block-start: 0em;
+			">
+			10K to 50K Fame ~ 200 <span style="color:LimeGreen;">Robux</span>
+			</p>
+			
+			<p style="
+				font-size: 16px;
+				margin-left: 4%;
+				margin-block-end: 0em;
+				margin-block-start: 2em;
+			">
+			>50K needs to be determined by looking at more factors
+			</p>
+			<br>
+			<h3 style="margin-block-end: 0em;">2. Badges</h3>
+			<h5 style="margin-block-start: 0em; margin-block-end: 1em; margin-left: 4%;">
+			A <span style="color:red;">YouTuber</span>, 
+			<span style="color:lightblue;">Verified</span>, 
+			<span style="color:MediumVioletRed;">TikToker</span> or 
+			<span style="color:MediumPurple;">Twitch Streamer</span> 
+			badge tends to double or triple the value of cards,
+			multiple badges is even better. developer or 
+			roblox mod badges are worth more than others.
+			</h5>
+		</div>
+	  <div class="right-side-text">
+		<br>
+		<br>
+		<br>
+			<h2 style="margin-block-end: 0em; margin-block-start: 20em;">Updates (Version 1.0.1)</h2>
+			<p>
+			- Added Top Buyer Display<br>
+			- Reworked UI<br>
+			- Added Valuation Tipps<br>
+			- Added Upcomming Plans<br>
+			<br>
+			<br>
+			<br>
+			<h2 style="margin-block-end: 0em; margin-block-start: 2em;">Planned for the Future</h2>
+			<h6 style="margin-block-start: 0em;">by AureusDraco and HerobrineTVv</h6>
+			<p>
+			- Graphs for Sale Movement<br>
+			- Graphs for Rap Movement<br>
+			- Get all Sales (only if Devs do help)<br>
+			- Calculate Card Values based on Factors<br>
+			- Add Badges to Database<br>
+			- Add Playersells lookup<br>
+			- Add Highestsells lookup<br>
+			<br>
+			<br>
+			<br>
+			<span style="color:Tomato;">NOTE: All Data here isnt 100% Accurate since we can only look into the Sales which were made for 1k+ Robux currently!</span>
+			</p>
+	  </div>
+	  <div class="container">
+		<h1 style="margin-block-end: 0em;">Pls Buy Me Sales Panel</h1>
+		<h5 style="margin-block-end: 2em; margin-block-start: 0em;">by HerobrineTVv (DC: nintendo_switch)</h5>
+		<div class="select-container">
+		  <label for="functionSelect">Select a function:</label>
+		  <select id="functionSelect" onchange="showInputFields()">
+			<option value="" selected disabled>Select a function</option>
+			<option value="getSales">Get Sales</option>
+			<option value="getCardSales">Get Card Sales</option>
+			<option value="getHighestSales">Get Highest Sales (Coming Soon)</option>
+		  </select>
+		</div>
+		<div id="inputFields" class="hidden">
+		  <!-- Input fields will be dynamically populated here based on the selected function -->
+		</div>
+		<div class="scrollable-container">
+		  <div class="button-container">
+			<button onclick="executeFunction()">Search</button>
+		  </div>
+		</div>
+		<br>
+		<div id="SaleStats"></div>
+		<br>
+		<br>
+		<div class="grid-parent">
+			<div class="grid-output" id="grid-output"></div> <!-- Middle box -->
+			<div class="grid-info" id="grid-info"></div>
+		</div>
+		<div class="grid-older-parent">
+		</div>
+	  </div>
+  </div>
+  <script src="https://buyme.bobac-analytics.com/script.js?v=18"></script>
+  <script>
+    // Function to remove left and right side text on mobile
+    function removeSideTextOnMobile() {
+      const leftSideText = document.querySelector('.left-side-text');
+      const rightSideText = document.querySelector('.right-side-text');
+
+      if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
+        leftSideText.style.display = 'none';
+        rightSideText.style.display = 'none';
+      } else {
+        leftSideText.style.display = 'block';
+        rightSideText.style.display = 'block';
+      }
+    }
+
+    // Call the function initially and on window resize
+    removeSideTextOnMobile();
+    window.addEventListener('resize', removeSideTextOnMobile);
+  </script>
+</body>
+</html>
